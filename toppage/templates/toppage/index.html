@@ -1,0 +1,31 @@
+{% extends 'toppage/base.html' %}
+
+{% block content %}
+
+
+
+
+<form method="POST" id="mainform">
+	{% csrf_token %}
+	<div>
+		<p>1.名前を入力してください</p>
+    {{ forms.name }}
+    </div>
+
+    <div>
+    	<p>2.好きな食べ物は??</p>
+    {{ forms.food }}
+    </div>
+
+	<button type="submit" id="save" class="save btn btn-primary">実行</button>
+</form>
+
+{% for i in data %}
+<p>{{i.name}}</p>
+<p>{{i.date}}</p>
+<p>{{i.food}}</p>
+{% endfor %}
+
+
+
+{% endblock %}

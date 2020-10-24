@@ -1,0 +1,22 @@
+{% extends 'toppage/base.html' %}
+
+{% block content %}
+
+
+
+
+<form method="POST" id="mainform">
+	{% csrf_token %}
+	<div>
+		<p>1.保存ファイル名を入力してください</p>
+    {{ forms.name }}
+    </div>
+
+	<button type="submit" id="save" class="save btn btn-primary">実行</button>
+</form>
+
+{% if file %}
+<a href="../{{file}}">ダウンロード</a>
+{% endif %}
+
+{% endblock %}
